@@ -49,8 +49,8 @@ class StyleSyncBot:
                 timeout=60,
                 max_retries=3,
             )
-            self.structured_llm = self.llm.with_structured_output(ClothingItem, method="json-mode")
-            self.recommendation_llm = self.llm.with_structured_output(OutfitRecommendation, method="json-mode")
+            self.structured_llm = self.llm.with_structured_output(ClothingItem)
+            self.recommendation_llm = self.llm.with_structured_output(OutfitRecommendation)
             self.wardrobe = []
         except Exception as e:
             st.error(f"Failed to initialize AI model: {str(e)}")
